@@ -1,0 +1,178 @@
+<!-- e_ticaret/templates/e_ticaret/home.html -->
+ {% extends "base.html" %}
+
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <style>
+        .dropdown-menu{
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .dropdown-item:hover {
+            background-color: #e9ecef;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 400px; /* İstediğin yüksekliği buraya ayarla */
+            object-fit: cover; /* Görsellerin ölçeklenmesi */
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Hover sırasında hafif büyüme */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hover sırasında gölgenin artması */
+        }
+
+        .card-title {
+            font-weight: bold; /* Ürün adını kalın yap */
+        }
+
+        .card-text {
+            font-weight: bold; /* Fiyatı kalın yap */
+            color: #e74c3c; /* İsteğe bağlı olarak fiyatı farklı bir renkte yapabilirsin */
+        }
+        .hover-effect:hover {
+            background-color: #3498db; /* Yeni bir renk örneği */
+            border-color: #2980b9; /* Sınır rengini de değiştir */
+            color: #ffffff; /* Yazı rengini beyaz yap */
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="banner1.jpg" class="d-block w-100" alt="Banner 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Banner 1 Başlık</h5>
+                <p>Bu banner ile ilgili kısa bir açıklama ekleyebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="banner2.jpg" class="d-block w-100" alt="Banner 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Banner 2 Başlık</h5>
+                <p>Bu banner ile ilgili kısa bir açıklama ekleyebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="banner3.jpg" class="d-block w-100" alt="Banner 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Banner 3 Başlık</h5>
+                <p>Bu banner ile ilgili kısa bir açıklama ekleyebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Kategori Menüsü -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col">
+                <div class="dropdown">
+                <a href="#" class="btn btn-outline-primary dropdown-toggle w-100" id="Kategori1">Ev & Yaşam</a>
+                    <ul class="dropdown-menu" aria-labelledby="Kategori1">
+                        <li><a class="dropdown-item" href="#">Alt Kategori 1</a></li>
+                        <li><a class="dropdown-item" href="#">Alt Kategori 2</a></li>
+                        <li><a class="dropdown-item" href="#">Alt Kategori 3</a></li>
+                        <li><a class="dropdown-item" href="#">Alt Kategori 4</a></li>
+                    </ul>
+                </div>  
+                    
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-primary dropdown-toggle w-100" id="Kategori2">Moda</a>
+                        <ul class="dropdown-menu" aria-labelledby="Kategori2">
+                            <li><a class="dropdown-item" href="#">Alt Kategori 1</a></li>
+                            <li><a class="dropdown-item" href="#">Alt Kategori 2</a></li>
+                            <li><a class="dropdown-item" href="#">Alt Kategori 3</a></li>
+                            <li><a class="dropdown-item" href="#">Alt Kategori 4</a></li>
+                        </ul>
+                    </div> 
+                
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-primary dropdown-toggle w-100" id="Kategori3">Elektronik</a>
+                        <ul class="dropdown-menu" aria-labelledby="Kategori3">
+                            <li><a class="dropdown-item" href="#">Bilgisayar/Tablet</a></li>
+                            <li><a class="dropdown-item" href="#">Telefon & Telefon Aksesuarları</a></li>
+                            <li><a class="dropdown-item" href="#">TV, Görüntü & Ses Sistemleri</a></li>
+                            <li><a class="dropdown-item" href="#">Beyaz Eşya</a></li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-primary dropdown-toggle w-100" id="Kategori4">Spor & Outdoor</a>
+                        <ul class="dropdown-menu" aria-labelledby="Kategori4">
+                            <li><a class="dropdown-item" href="#">Spor Giyim & Ayakkabı</a></li>
+                            <li><a class="dropdown-item" href="#">Outdoor Giyim & Ayakkabı</a></li>
+                            <li><a class="dropdown-item" href="#">Fitness</a></li>
+                            <li><a class="dropdown-item" href="#">Spor Branşları</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Öne Çıkan Ürünler -->
+    <div class="container">
+        <h2>Öne Çıkan Ürünler</h2>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">{{ product.name }}</h5>
+                        <p class="card-text text-secondary">{{ product.price }} TL</p>
+                        <a href="{% url 'e_ticaret:add_to_cart' product.id %}" class="btn btn-primary hover-effect">Sepete Ekle</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <p>&copy; 2024 E-Ticaret. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    
+
+       
+</body>
+</html>
+{% endblock %} 

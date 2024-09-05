@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+</head>
+<body>
+    <h1>Kayıt Ol</h1>
+    <form action="POST">
+        {% csrf_token %}
+        <label for="username">Kullanıcı Adı :</label>
+        <input type="text" name="username",id="username" required>
+        <label for="password">Şifre :</label>
+        <input type="password" name="password" id="password" required>
+        <label for="password_confirm">Şifreyi Onayla :</label>
+        <input type="password" name="password_confirm" id="password_confirm" required>
+        <button type="submit">Kayıt Ol</button>
+    </form>
+    
+</body>
+</html>
+{% endblock %}
